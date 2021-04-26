@@ -1,0 +1,44 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[{RowBox[{RowBox[{"t1","=","0."}],";"}],"\n",RowBox[
+{RowBox[{RowBox[{"t2","=","10."}],";"}]," "}],"\n",RowBox[{RowBox[{"stepsize","=","1000"}],";"}],"\n",RowBox[
+{RowBox[{RowBox[{"v1","=","0"}],";"," ",RowBox[{"\[Beta]","=","0"}],";"," ",RowBox[
+{"\[Alpha]","=","0"}],";"," ",RowBox[{"v2","=","0"}],";"," ",RowBox[{"r","=","2"}],";"}]," "}],"\n",RowBox[
+{RowBox[{"d","=","1"}],";"}],"\n",RowBox[{"a","=","3","  "}],"\n",RowBox[{RowBox[
+{RowBox[{"f1","[",RowBox[{"t_"," ",","," ","r_"," ",","," ","v_"}]," ","]"}]," ","="," ",RowBox[
+{RowBox[{"-",RowBox[{"Sin","[","\[Alpha]","]"}]}]," ","+","  ",RowBox[{RowBox[{"d"," ","[",RowBox[
+{"1","-",RowBox[{"(",RowBox[{"2","/","r"}],")"}]}],"]"}]," ","[",RowBox[{RowBox[{"2"," ",RowBox[
+{"Cos","[","\[Alpha]","]"}]}]," ","-"," ",RowBox[{"Sin","[",RowBox[{"\[Alpha]","-","\[Beta]"}],"]"}]}],"]"}]}]}],";"}],"\n",RowBox[
+{RowBox[{RowBox[{"g1","[",RowBox[{"t_",",","r_",",","v_"}],"]"}]," ","=",RowBox[{RowBox[
+{"-",RowBox[{"Sin","[","\[Beta]","]"}]}]," ","+"," ",RowBox[{"0.5","*",RowBox[{"Cos","[",RowBox[
+{"v","*","t"}],"]"}],"*",RowBox[{"Cos","[","\[Beta]","]"}]}]," ","+","  ",RowBox[
+{RowBox[{"d"," ","[",RowBox[{"1","-",RowBox[{"(",RowBox[{"2","/","r"}],")"}]}],"]"}]," ","[",RowBox[
+{RowBox[{RowBox[{"-","2"}],RowBox[{"Cos","[","\[Beta]","]"}]}]," ","+"," ",RowBox[
+{"Sin","[",RowBox[{"\[Alpha]","-","\[Beta]"}],"]"}]}],"]"}],"  ","-","a"}]}]," ",";"}],"\n",RowBox[
+{RowBox[{RowBox[{"ImprovedCoupledDiffEqn1stOrderSolver","[",RowBox[{"f1_",","," ","g1_",","," ","v1_",","," ","v2_",",","t1_",","," ","t2_",",","stepsize_"}],"]"}]," ",":=","   ",RowBox[
+{"Module","[",RowBox[{RowBox[{"{",RowBox[{"tstep",","," ","Datapoints"}],"}"}],","," ",RowBox[
+{RowBox[{"tstep"," ","="," ",RowBox[{RowBox[{"(",RowBox[{"t2"," ","-"," ","t1"}],")"}],"/","stepsize"}]}],";"," ","\n","   ",RowBox[
+{"For","[",RowBox[{RowBox[{"Datapoints"," ","="," ",RowBox[{"{",RowBox[{"{",RowBox[
+{"t1",","," ","x1",","," ","v1"}],"}"}],"}"}]}],","," ",RowBox[{RowBox[{"Length","[","Datapoints","]"}]," ","\[LessEqual]"," ","stepsize"}],","," ","\n","    ",RowBox[
+{"AppendTo","[",RowBox[{"Datapoints"," ",","," ","\n","     ",RowBox[{RowBox[{"Last","[","Datapoints","]"}]," ","+"," ","\n","      ",RowBox[
+{"tstep","*",RowBox[{"{",RowBox[{"1",","," ",RowBox[{RowBox[{"(",RowBox[{RowBox[{"f1"," ","@@"," ",RowBox[
+{"Last","[","Datapoints","]"}]}],"  ","+","  ","\n","           ",RowBox[{"f1"," ","@@"," ",RowBox[
+{"(",RowBox[{RowBox[{"Last","[","Datapoints","]"}]," ","+","  ","\n","              ",RowBox[
+{"tstep"," ",RowBox[{"{",RowBox[{"1",","," ",RowBox[{"f1"," ","@@"," ",RowBox[{"Last","[","Datapoints","]"}]}],","," ","\n","                ",RowBox[
+{"g1"," ","@@"," ",RowBox[{"Last","[","Datapoints","]"}]}]}],"}"}]}]}],")"}]}]}]," ",")"}],"/","\n","         ","2"}],","," ",RowBox[
+{RowBox[{"(",RowBox[{RowBox[{"g1"," ","@@"," ",RowBox[{"Last","[","Datapoints","]"}]}],"  ","+","  ","\n","           ",RowBox[
+{"g1"," ","@@"," ",RowBox[{"(",RowBox[{RowBox[{"Last","[","Datapoints","]"}]," ","+","  ","\n","              ",RowBox[
+{"tstep"," ",RowBox[{"{",RowBox[{"1",","," ",RowBox[{"f1"," ","@@"," ",RowBox[{"Last","[","Datapoints","]"}]}],","," ","\n","                ",RowBox[
+{"g1"," ","@@"," ",RowBox[{"Last","[","Datapoints","]"}]}]}],"}"}]}]}],")"}]}]}]," ",")"}],"/","2"}]}],"}"}]}]}]}],"]"}],","}],"]"}],";"," ",RowBox[
+{"Return","[","Datapoints","]"}]}]}],"]"}]}],";"}],"\n",RowBox[{"\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]","\n","\n","\n","\n","\n","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]"}]}],
+"Input",ExpressionUUID -> "7774ea5d-ddb2-4405-9802-2ff1ec0e1cae"],Cell[
+BoxData["3",
+StandardForm],"Output",CellLabel -> "Out[12]= ",ExpressionUUID -> "10fc03bd-2c04-419d-98b8-6452d4151270"]},
+Open],ExpressionUUID -> "ac7f3aec-0021-405c-9b43-3ca3c3e8981a"],Cell[
+BoxData[RowBox[
+{" ",RowBox[{"ListLinePlot","[",RowBox[{RowBox[{RowBox[{"ImprovedCoupledDiffEqn1stOrderSolver","[",RowBox[
+{"f1",","," ","g1",","," ","v1",","," ","v2",","," ","0",","," ","10",",","90"}],"]"}],"[",RowBox[
+{"[",RowBox[{";;"," ",","," ",RowBox[{"2",";;"," ","3"}]}],"]"}],"]"}],","," ",RowBox[
+{"PlotRange"," ","\[Rule]"," ","Full"}],","," ",RowBox[{"AxesLabel"," ","\[Rule]","Automatic"}]}],"]"}]}]],
+"Input",CellLabel -> "In[16]:= ",ExpressionUUID -> "cc75a743-963b-4cd3-bab9-471b939fa9aa"]},
+StyleDefinitions -> "Default.nb",FrontEndVersion -> "12.2 for Wolfram Cloud 1.58 (March 31, 2021)"]
