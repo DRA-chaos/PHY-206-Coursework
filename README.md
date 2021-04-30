@@ -1,2 +1,2 @@
-# PHY-206-Coursework
+# PHY-206-Classwork
 Project 1
